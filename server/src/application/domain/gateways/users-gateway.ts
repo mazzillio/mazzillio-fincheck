@@ -1,4 +1,4 @@
-import { Users } from '../../../../application/domain/entities/users';
+import { Users } from '@entities/users';
 
 export interface UsersGatewayInterface {
   create(user: Users): Promise<Users>;

@@ -1,5 +1,5 @@
 import { Users } from '../../src/application/domain/entities/users';
-import { UsersGatewayInterface } from '../../src/adapter/out/persistence/repository/users-gateway';
+import { UsersGatewayInterface } from '../../src/application/domain/gateways/users-gateway';
 import { randomUUID } from 'crypto';
 
 export class UsersGatewayInMemory implements UsersGatewayInterface {

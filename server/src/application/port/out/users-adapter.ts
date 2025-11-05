@@ -1,6 +1,7 @@
-import { CreateUserDto } from 'src/application/domain/dto/in/create-user.dto';
+import { CreateUserQueryDto } from '@adapterDto/in/create-user.dto';
+import { UserResponse } from '@applicationDto/out/user-response.dto';
 
 export interface UsersAdapter {
-  create(createUserDto: CreateUserDto);
-  findById(id: string);
+  create(createUserDto: CreateUserQueryDto): Promise<UserResponse>;
+  findById(id: string): Promise<UserResponse>;
 }

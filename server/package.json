@@ -71,6 +71,19 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@config/(.*)$": "<rootDir>/config/$1",
+      "^@adapter/(.*)$": "<rootDir>/adapter/$1",
+      "^@application/(.*)$": "<rootDir>/application/$1",
+      "^@port/(.*)$": "<rootDir>/application/port/$1",
+      "^@repositories/(.*)$": "<rootDir>/adapter/out/persistence/repository/$1",
+      "^@services/(.*)$": "<rootDir>/application/domain/services/$1",
+      "^@gateways/(.*)$": "<rootDir>/application/domain/gateways/$1",
+      "^@applicationDto/(.*)$": "<rootDir>/application/domain/dto/$1",
+      "^@adapterDto/(.*)$": "<rootDir>/adapter/out/dto/$1",
+      "^@entities/(.*)$": "<rootDir>/application/domain/entities/$1",
+      "^@mappers/(.*)$": "<rootDir>/application/domain/mappers/$1"
+    }
   }
 }

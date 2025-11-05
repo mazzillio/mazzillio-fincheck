@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '../../../../config/prisma.service';
-import { UsersGatewayInterface } from 'src/adapter/out/persistence/repository/users-gateway';
-import { Users } from 'src/application/domain/entities/users';
-import { toUsers } from 'src/application/domain/mappers/toUsers';
+import { PrismaService } from '@config/prisma.service';
+import { UsersGatewayInterface } from '@gateways/users-gateway';
+import { Users } from '@entities/users';
+import { UsersMapper } from '@mappers/UsersMap';
 
 @Injectable()
 export class UsersRepositoryGateway implements UsersGatewayInterface {
@@ -37,7 +37,7 @@ export class UsersRepositoryGateway implements UsersGatewayInterface {
       },
     });
 
-    return toUsers(userCreated);
+    return UsersMapper.toUser(userCreated);
   }
   async findByEmail(email: string): Promise<boolean> {
     const emailTaken = await this.prismaService.user.findUnique({
@@ -50,6 +50,6 @@ export class UsersRepositoryGateway implements UsersGatewayInterface {
     const user = await this.prismaService.user.findUnique({
       where: { id },
     });
-    return toUsers(user);
+    return UsersMapper.toUser(user);
   }
 }
