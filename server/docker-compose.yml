@@ -1,17 +1,24 @@
-version: 'latest'
+version: '3.8'
 
 services:
   database_pg_fincheck:
-    image: postgres
+    image: postgres:16-alpine
     hostname: postgres
     container_name: database_pg_fincheck
-    ports:
-      - 5432:5432
+    restart: unless-stopped
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=mazzillio_fincheck_db
+    ports:
+      - "5432:5432"
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
-    expose: 
-      - 5432
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pg_data:
