@@ -1,16 +1,20 @@
 import { Module } from '@nestjs/common';
-import { UsersService } from '../../application/domain/services/users.service';
-import { UsersController } from '../out/users.controller';
-import { UsersRepositoryGateway } from 'src/adapter/out/persistence/repository/users.repository';
+import { UsersService } from '@services/users.service';
+import { UsersController } from '@adapter/out/users.controller';
+import { UsersPrismaRepositoryGateway } from '@adapter/out/persistence/repository/users.prisma-repository';
+import { HashBcyptService } from '@config/hash-bcypt.service';
 
 @Module({
   controllers: [UsersController],
   providers: [
     UsersService,
-    UsersRepositoryGateway,
     {
       provide: 'UsersGatewayInterface',
-      useExisting: UsersRepositoryGateway,
+      useClass: UsersPrismaRepositoryGateway,
+    },
+    {
+      provide: 'HasGatewayInterface',
+      useClass: HashBcyptService,
     },
   ],
 })

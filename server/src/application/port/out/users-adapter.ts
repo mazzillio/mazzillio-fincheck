@@ -1,4 +1,4 @@
-import { CreateUserQueryDto } from '@adapterDto/in/create-user.dto';
+import { CreateUserQueryDto } from '@adapter/out/dto/in/create-user-query.dto';
 import { UserResponse } from '@applicationDto/out/user-response.dto';
 
 export interface UsersAdapter {

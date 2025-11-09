@@ -5,7 +5,7 @@ import { Users } from '@entities/users';
 import { UsersMapper } from '@mappers/UsersMap';
 
 @Injectable()
-export class UsersRepositoryGateway implements UsersGatewayInterface {
+export class UsersPrismaRepositoryGateway implements UsersGatewayInterface {
   constructor(private readonly prismaService: PrismaService) {}
   async create(user: Users): Promise<Users> {
     const { name, email, password } = user;
