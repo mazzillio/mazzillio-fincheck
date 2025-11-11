@@ -1,19 +1,16 @@
-import { Controller, Post, Body, Get, Param } from '@nestjs/common';
+import { Controller, Get, Req } from '@nestjs/common';
+import { Request } from 'express';
 import { UsersService } from '@services/users.service';
 import { UsersAdapter } from '@port/out/users-adapter';
-import { CreateUserQueryDto } from '@adapter/out/dto/in/create-user-query.dto';
-import { UserResponse } from '@application/domain/dto/out/user-response.dto';
+import { UsersResponse } from '@application/domain/dto/out/users-response.dto';
 
 @Controller('users')
 export class UsersController implements UsersAdapter {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
-  create(@Body() createUserDto: CreateUserQueryDto): Promise<UserResponse> {
-    return this.usersService.create(createUserDto);
-  }
-  @Get(':id')
-  findById(@Param('id') id: string): Promise<UserResponse> {
-    return this.usersService.findById(id);
+  @Get('me')
+  me(@Req() request: Request): Promise<UsersResponse> {
+    const userId = request['userId'];
+    return this.usersService.findById(userId);
   }
 }

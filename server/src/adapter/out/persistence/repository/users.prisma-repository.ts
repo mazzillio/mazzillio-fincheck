@@ -39,12 +39,18 @@ export class UsersPrismaRepositoryGateway implements UsersGatewayInterface {
 
     return UsersMapper.toUser(userCreated);
   }
-  async findByEmail(email: string): Promise<boolean> {
+  async emailExists(email: string): Promise<boolean> {
     const emailTaken = await this.prismaService.user.findUnique({
       where: { email },
       select: { id: true },
     });
     return !!emailTaken;
+  }
+  async findByEmail(email: string): Promise<Users> {
+    const user = await this.prismaService.user.findUnique({
+      where: { email },
+    });
+    return user ? UsersMapper.toUser(user) : null;
   }
   async findById(id: string): Promise<Users> {
     const user = await this.prismaService.user.findUnique({

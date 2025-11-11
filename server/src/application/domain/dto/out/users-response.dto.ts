@@ -1,4 +1,4 @@
-export class UserResponse {
+export interface UsersResponse {
   id: string;
   name: string;
   email: string;

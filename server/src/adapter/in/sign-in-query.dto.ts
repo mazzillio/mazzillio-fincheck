@@ -1,11 +1,7 @@
-import { CreateUserDto } from '@application/domain/dto/in/create-user.dto';
+import { SignInDto } from '@application/domain/dto/in/sign-in.dto';
 import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
 
-export class CreateUserQueryDto implements CreateUserDto {
-  @IsNotEmpty()
-  @IsString()
-  name: string;
-
+export class SignInQueryDto implements SignInDto {
   @IsNotEmpty()
   @IsString()
   @IsEmail()

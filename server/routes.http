@@ -1,13 +1,23 @@
 ### create user
-POST http://localhost:3000/users
+POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-  "name": "hash-test",
-  "email": "hash-test@example.com",
+  "name": "signup-test",
+  "email": "signup-test@example.com",
   "password": "lbweininweinfoi"
 }
 
 ### get user by id
-GET http://localhost:3000/users/2d62f81f-c324-47f9-b053-2d202af026cc
+GET http://localhost:3000/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjI4NjM4MDcsImV4cCI6MTc2MzQ2ODYwN30.7M4ph9Z5uxhEm6dxzW-BjIAQw9llu0wZNhGOWCcIc-U
 Content-Type: application/json
+
+### sign in
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "hash-test@example.com",
+  "password": "lbweininweinfoi"
+}

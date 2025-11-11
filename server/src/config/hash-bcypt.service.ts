@@ -1,5 +1,5 @@
-import { HasGatewayInterface } from "@application/domain/gateways/has-gateway";
-import { compare, hash } from "bcryptjs";
+import { HasGatewayInterface } from '@application/domain/gateways/has-gateway';
+import { compare, hash } from 'bcryptjs';
 
 export class HashBcyptService implements HasGatewayInterface {
   async hash(password: string): Promise<string> {
