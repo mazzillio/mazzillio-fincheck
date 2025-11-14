@@ -3,14 +3,14 @@ import { Request } from 'express';
 import { UsersService } from '@services/users.service';
 import { UsersAdapter } from '@port/out/users-adapter';
 import { UsersResponse } from '@application/domain/dto/out/users-response.dto';
+import { ActiveUserId } from '@config/decorators/Active-User-Id.decorator';
 
 @Controller('users')
 export class UsersController implements UsersAdapter {
   constructor(private readonly usersService: UsersService) {}
 
   @Get('me')
-  me(@Req() request: Request): Promise<UsersResponse> {
-    const userId = request['userId'];
+  me(@ActiveUserId() userId: string): Promise<UsersResponse> {
     return this.usersService.findById(userId);
   }
 }

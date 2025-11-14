@@ -1,6 +1,9 @@
-### create user
-POST http://localhost:3000/auth/signup
-Content-Type: application/json
+@baseUrl = http://localhost:3000
+@contentType = application/json
+
+### create user (signup)
+POST {{baseUrl}}/auth/signup
+Content-Type: {{contentType}}
 
 {
   "name": "signup-test",
@@ -8,16 +11,17 @@ Content-Type: application/json
   "password": "lbweininweinfoi"
 }
 
-### get user by id
-GET http://localhost:3000/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjI4NjM4MDcsImV4cCI6MTc2MzQ2ODYwN30.7M4ph9Z5uxhEm6dxzW-BjIAQw9llu0wZNhGOWCcIc-U
-Content-Type: application/json
-
 ### sign in
-POST http://localhost:3000/auth/signin
-Content-Type: application/json
+POST {{baseUrl}}/auth/signin
+Content-Type: {{contentType}}
 
 {
   "email": "hash-test@example.com",
   "password": "lbweininweinfoi"
 }
+
+
+### get user by id
+GET {{baseUrl}}/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjI5ODg0MzEsImV4cCI6MTc2MzU5MzIzMX0.riOgHPAUoJFoHxlzmy8pynd_ELTwrFu7b4XMJgFPrBU
+Content-Type: {{contentType}}
