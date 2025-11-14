@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { UsersGatewayInterface } from '@gateways/users-gateway';
-import { UsersUseCase } from '@port/in/users-use-case';
+import { UsersGatewayInterface } from '@application/domain/gateways/users.gateway';
+import { UsersUseCase } from '@application/port/in/users.use-case';
 import { UsersMapper } from '../mappers/UsersMap';
 import { UsersResponse } from '../dto/out/users-response.dto';
 

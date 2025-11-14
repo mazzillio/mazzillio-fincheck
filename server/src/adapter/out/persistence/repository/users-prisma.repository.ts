@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '@config/prisma.service';
-import { UsersGatewayInterface } from '@gateways/users-gateway';
+import { UsersGatewayInterface } from '@application/domain/gateways/users.gateway';
 import { Users } from '@entities/users';
 import { UsersMapper } from '@mappers/UsersMap';
 

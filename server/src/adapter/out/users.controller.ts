@@ -1,7 +1,6 @@
 import { Controller, Get, Req } from '@nestjs/common';
-import { Request } from 'express';
 import { UsersService } from '@services/users.service';
-import { UsersAdapter } from '@port/out/users-adapter';
+import { UsersAdapter } from '@application/port/out/users.adapter';
 import { UsersResponse } from '@application/domain/dto/out/users-response.dto';
 import { ActiveUserId } from '@config/decorators/Active-User-Id.decorator';
 

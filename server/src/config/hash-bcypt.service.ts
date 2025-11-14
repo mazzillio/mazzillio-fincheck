@@ -1,4 +1,4 @@
-import { HasGatewayInterface } from '@application/domain/gateways/has-gateway';
+import { HasGatewayInterface } from '@application/domain/gateways/hash.gateway';
 import { compare, hash } from 'bcryptjs';
 
 export class HashBcyptService implements HasGatewayInterface {

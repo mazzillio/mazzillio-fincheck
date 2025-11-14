@@ -25,3 +25,8 @@ Content-Type: {{contentType}}
 GET {{baseUrl}}/users/me
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjI5ODg0MzEsImV4cCI6MTc2MzU5MzIzMX0.riOgHPAUoJFoHxlzmy8pynd_ELTwrFu7b4XMJgFPrBU
 Content-Type: {{contentType}}
+
+### get categories by user id
+GET {{baseUrl}}/categories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjI5ODg0MzEsImV4cCI6MTc2MzU5MzIzMX0.riOgHPAUoJFoHxlzmy8pynd_ELTwrFu7b4XMJgFPrBU
+Content-Type: {{contentType}}

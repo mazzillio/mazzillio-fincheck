@@ -1,4 +1,4 @@
-import { TokenGateway } from '@application/domain/gateways/token-gateway';
+import { TokenGateway } from '@application/domain/gateways/token.gateway';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';

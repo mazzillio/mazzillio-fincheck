@@ -6,7 +6,7 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { Request } from 'express';
-import { TokenGateway } from '@application/domain/gateways/token-gateway';
+import { TokenGateway } from '@application/domain/gateways/token.gateway';
 import { Reflector } from '@nestjs/core';
 import { IS_PUBLIC_KEY } from './contants';
 

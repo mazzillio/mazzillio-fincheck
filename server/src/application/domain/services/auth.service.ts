@@ -1,11 +1,11 @@
-import { AuthUseCase } from '@application/port/in/auth-use-case';
+import { AuthUseCase } from '@application/port/in/auth.use-case';
 import { Inject, Injectable } from '@nestjs/common';
 import { SignInDto } from '../dto/in/sign-in.dto';
 import { AccessTokenResponse } from '../dto/out/access-token-response.dto';
-import { UsersGatewayInterface } from '../gateways/users-gateway';
-import { HasGatewayInterface } from '../gateways/has-gateway';
+import { UsersGatewayInterface } from '../gateways/users.gateway';
+import { HasGatewayInterface } from '../gateways/hash.gateway';
 import { InvalidCredentialException } from '../execeptions/invalid-credential.exeception';
-import { TokenGateway } from '@application/domain/gateways/token-gateway';
+import { TokenGateway } from '@application/domain/gateways/token.gateway';
 import { SignUpQueryDto } from '@adapter/in/sign-up-query.dto';
 import { UserAlreadyExitsException } from '../execeptions/user-already-exits.exeception';
 import { Users } from '../entities/users';
