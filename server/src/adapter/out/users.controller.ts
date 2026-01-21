@@ -1,4 +1,4 @@
-import { Controller, Get, Req } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { UsersService } from '@services/users.service';
 import { UsersAdapter } from '@application/port/out/users.adapter';
 import { UsersResponse } from '@application/domain/dto/out/users-response.dto';

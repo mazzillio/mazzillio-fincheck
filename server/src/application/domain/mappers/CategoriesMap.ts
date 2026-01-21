@@ -1,4 +1,4 @@
-import { Category, User } from '@prisma/client';
+import { Category } from '@prisma/client';
 import { Categories } from '../entities/categories';
 import { CategoriesResponse } from '../dto/out/categories-response.dto';
 

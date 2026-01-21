@@ -20,6 +20,16 @@ Content-Type: {{contentType}}
   "password": "lbweininweinfoi"
 }
 
+### sign in
+POST {{baseUrl}}/auth/signin
+Content-Type: {{contentType}}
+
+{
+  "email": "signup-test@example.com",
+  "password": "lbweininweinfoi"
+}
+
+
 
 ### get user by id
 GET {{baseUrl}}/users/me
@@ -30,3 +40,35 @@ Content-Type: {{contentType}}
 GET {{baseUrl}}/categories
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjI5ODg0MzEsImV4cCI6MTc2MzU5MzIzMX0.riOgHPAUoJFoHxlzmy8pynd_ELTwrFu7b4XMJgFPrBU
 Content-Type: {{contentType}}
+
+
+### create bank account
+POST {{baseUrl}}/bank-accounts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjI5ODg0MzEsImV4cCI6MTc2MzU5MzIzMX0.riOgHPAUoJFoHxlzmy8pynd_ELTwrFu7b4XMJgFPrBU
+Content-Type: {{contentType}}
+
+{
+  "name": "itau bank account",
+  "initialBalance": 800,
+  "color": "#E77D22",
+  "type": "CHECKING"
+}
+
+### get bank accounts by user id
+GET {{baseUrl}}/bank-accounts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjMzMjEwMTMsImV4cCI6MTc2MzkyNTgxM30.KVK_HwPRuKQoE77A82sxanmOX2CZ4bjRnqj6H9TpybE
+Content-Type: {{contentType}}
+
+
+### update bank account
+PUT {{baseUrl}}/bank-accounts/299881a4-0a20-4ecc-9318-61586f123e3c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkNTE0MTFkNC1hOWVjLTRlNDItOWEyMy0xOTU1NTdiN2UwZjUiLCJpYXQiOjE3NjMzMjEwMTMsImV4cCI6MTc2MzkyNTgxM30.KVK_HwPRuKQoE77A82sxanmOX2CZ4bjRnqj6H9TpybE
+Content-Type: {{contentType}}
+
+{
+   "name": "nubank updated",
+    "initialBalance": 1000,
+    "color": "#7950F2",
+    "type": "CHECKING"
+}
+

@@ -1,4 +1,3 @@
-
 import { CategoriesResponse } from '@application/domain/dto/out/categories-response.dto';
 import { CategoriesService } from '@application/domain/services/categories.service';
 import { CategoriesAdapter } from '@application/port/out/categories.adapter';

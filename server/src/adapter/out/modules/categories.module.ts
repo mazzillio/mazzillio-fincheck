@@ -5,11 +5,12 @@ import { CategoriesPrismaRepositoryGateway } from '../persistence/repository/cat
 
 @Module({
   controllers: [CategoriesController],
-  providers: [CategoriesService, 
+  providers: [
+    CategoriesService,
     {
-    provide: 'CategoriesGatewayInterface',
-    useClass: CategoriesPrismaRepositoryGateway,
-  }
-]
+      provide: 'CategoriesGatewayInterface',
+      useClass: CategoriesPrismaRepositoryGateway,
+    },
+  ],
 })
 export class CategoriesModule {}

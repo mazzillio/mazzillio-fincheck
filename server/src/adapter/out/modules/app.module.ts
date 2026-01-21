@@ -9,7 +9,14 @@ import { CategoriesModule } from './categories.module';
 import { BankAccountsModule } from './bank-account.module';
 
 @Module({
-  imports: [ConfigModule, DatabaseModule, UsersModule, AuthModule, CategoriesModule, BankAccountsModule],
+  imports: [
+    ConfigModule,
+    DatabaseModule,
+    UsersModule,
+    AuthModule,
+    CategoriesModule,
+    BankAccountsModule,
+  ],
   controllers: [],
   providers: [
     {
